@@ -1,3 +1,4 @@
+
 const express = require('express');
 
 const app = express();
@@ -8,8 +9,8 @@ app.get('/', (req, res) => {
     res.sendFile('./home.html', { root: __dirname });
 });
 
-app.get('/about', (req, res) => {
-    res.sendFile('./about.html', { root: __dirname });
+app.get('/member', (req, res) => {
+    res.sendFile('./member.html', { root: __dirname });
 });
 
 app.get('/contact', (req, res) => {
