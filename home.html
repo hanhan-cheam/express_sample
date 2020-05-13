@@ -26,7 +26,7 @@
 <body>
 <div class="container">
   <center><h2>Insert Form</h2></center>
-  <form action="/action_page.php">
+  <form>
     <div class="form-group">
       <label for="username">Username:</label>
       <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
@@ -38,10 +38,43 @@
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
-    <button type="submit" class="btn btn-default">Add</button>
+    <button type="submit" class="btn btn-default" onclick="addMember()">Add</button>
   </form>
 </div>
 
 </body>
 </html>
 
+<script>
+  function addMember(){
+    alert("add success")
+    let userdata = {
+        username : $('[name="username"]').val(),
+        address : $('[name="address"]').val()  
+    }
+
+    $.ajax({
+        type: "POST", 
+        url : 'http://192.168.11.46:4500/users',
+        data: userdata,
+        dataType : "JSON",
+    }).done(function()  {
+        alert("Success.");
+    })
+
+
+
+    // $.ajax({
+    //     type : 'POST',
+    //     url : 'http://192.168.11.46:4500/users',
+    //     data : userdata,
+    //     dataType : "JSON",
+      
+    // }).done(function(data) {
+    //     // alert("add success")
+
+    //     window.location("http://192.168.11.46:5500/")
+    // });
+    // event.preventDefault();
+}
+</script>
