@@ -14,12 +14,12 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="http://192.168.11.46:5500/">Pingspace</a>
+      <a class="navbar-brand" href="https://hauhan-aws.pingspace.co/">Pingspace</a>
     </div>
     <ul class="nav navbar-nav">
 
-      <li><a href="http://192.168.11.46:5500/">Insert</a></li>
-      <li><a href="http://192.168.11.46:5500/member">View</a></li>
+      <li><a href="https://hauhan-aws.pingspace.co/">Insert</a></li>
+      <li><a href="https://hauhan-aws.pingspace.co/member">View</a></li>
     </ul>
   </div>
 </nav>
@@ -52,16 +52,16 @@
         username : $('[name="username"]').val(),
         address : $('[name="address"]').val()  
     }
-
+    
     $.ajax({
         type: "POST", 
-        url : 'http://192.168.11.46:4500/users',
+        url : 'https://yeeli-aws.pingspace.co/users',
         data: userdata,
         dataType : "JSON",
     }).done(function()  {
         alert("Success.");
     })
-
+    window.location.href = "http://www.w3schools.com";
 
 
     // $.ajax({
